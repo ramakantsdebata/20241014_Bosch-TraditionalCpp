@@ -23,7 +23,7 @@ int divd(int a, int b)
 
 typedef int (*fnPtr)(int, int);
 
-int main()
+void Test1()
 {
 	cout << "Enter a choice: ";
 	int ch;
@@ -54,7 +54,6 @@ int main()
 	}
 	else
 		cout << "No operation selected" << endl;
-	return 0;
 }
 
 int add(int a, int b)
@@ -62,3 +61,40 @@ int add(int a, int b)
 	return a + b;
 }
 
+// Test2 ////////////////////////////////////////////////////////////////
+
+// Array of func pointers
+int (*fnPtrArr[4])(int, int);  // <-- Array of fn ptrs; We are not going to use it below
+
+void Test2()
+{
+	cout << "Enter a choice: ";
+	int ch;
+	cin >> ch;
+
+	if (ch < 0 || ch > 3)
+	{
+		cout << "Invalid choice." << endl;
+		return;
+	}
+
+	fnPtr op[4];
+	op[0] = &add;
+	op[1] = &sub;
+	op[2] = &mul;
+	op[3] = &divd;
+
+	int res = op[ch](30, 20);
+	cout << "Res: " << res << endl;
+}
+
+
+// Main ////////////////////////////////////////////////////////////////
+
+int main()
+{
+	//Test1();
+	Test2();
+
+	return 0;
+}
