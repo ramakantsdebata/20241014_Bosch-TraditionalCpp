@@ -1,10 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int add(int a, int b)
-{
-	return a + b;
-}
+int add(int, int);
 
 int sub(int a, int b)
 {
@@ -22,11 +19,9 @@ int divd(int a, int b)
 }
 
 
-int (*op)(int, int);
+//int (*op)(int, int);
 
-//typedef int (*fnPtr)(int, int);
-
-
+typedef int (*fnPtr)(int, int);
 
 int main()
 {
@@ -34,7 +29,7 @@ int main()
 	int ch;
 	cin >> ch;
 
-	//fnPtr op;
+	fnPtr op;
 	switch (ch)
 	{
 	case 1:
@@ -49,8 +44,21 @@ int main()
 	case 4:
 		op = &divd;
 		break;
+	default:
+		op = NULL;
 	}
-	int res = op(30, 20);
-	cout << "Res: " << res << endl;
+	if (op != NULL)
+	{
+		int res = op(30, 20);
+		cout << "Res: " << res << endl;
+	}
+	else
+		cout << "No operation selected" << endl;
 	return 0;
 }
+
+int add(int a, int b)
+{
+	return a + b;
+}
+
