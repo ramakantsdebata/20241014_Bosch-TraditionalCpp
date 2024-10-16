@@ -17,6 +17,15 @@ public:
 	int getSeconds();
 	int getMinutes();
 	int getHours();
+
+	cTime& operator++();		// Pre
+	//cTime  operator++(int);		// Post
+	friend cTime operator++(cTime& obj, int);
+	friend void Display(const cTime& obj);
 };
+
+cTime operator++(cTime& obj, int);
+
+void Display(const cTime& obj);
 
 #endif	//CTIME_H

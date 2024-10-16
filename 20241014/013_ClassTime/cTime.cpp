@@ -47,3 +47,32 @@ int cTime::getHours()
 {
 	return m_Hours;
 }
+
+
+// Pre-increment operator
+cTime& cTime::operator++()
+{
+	m_Seconds++;
+	return *this;
+}
+
+// Post-increment operator
+//cTime cTime::operator++(int)
+//{
+//	cTime temp(*this);
+//	m_Seconds++;
+//	return temp;
+//}
+
+cTime operator++(cTime& obj, int)
+{
+	cTime temp(obj);
+	//obj.setSeconds(obj.getSeconds() + 1);
+	obj.m_Seconds++;
+	return temp;
+}
+
+void Display(const cTime& obj)
+{
+	std::cout << "Time is : " << obj.m_Hours << ":" << obj.m_Minutes << ":" << obj.m_Seconds << std::endl;
+}

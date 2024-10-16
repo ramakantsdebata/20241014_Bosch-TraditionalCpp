@@ -4,6 +4,7 @@
 
 cString::cString()
 {
+	std::cout << "cString()" << std::endl;
 	//m_Str = NULL;
 	//m_Len = 0;
 
@@ -12,7 +13,16 @@ cString::cString()
 
 cString::cString(const char* str)
 {
+	std::cout << "cString(const char *)" << std::endl;
 	AllocateForStr(str);
+}
+
+cString::cString(const cString& obj)
+{
+	std::cout << "cString(const cString&)" << std::endl;
+	m_Len = obj.m_Len;
+	m_Str = new char[m_Len + 1];
+	strcpy_s(m_Str, m_Len + 1, obj.m_Str);
 }
 
 void cString::AllocateForStr(const char* str)

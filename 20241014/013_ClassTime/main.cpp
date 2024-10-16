@@ -9,7 +9,8 @@ void PrintTime(cTime t)
 		<< t.getMinutes() << ":"
 		<< t.getSeconds() << std::endl;
 }
-int main()
+
+void Test1()
 {
 	cTime t;
 	t.setSeconds(68);
@@ -21,6 +22,27 @@ int main()
 
 	cTime t2(1, 1, 1);
 	PrintTime(t2);
+}
 
+void Test2()
+{
+	cTime t1;
+	PrintTime(t1);
+
+	cTime t2(++t1);
+	PrintTime(t2);
+
+	cTime t3(t1++);
+	PrintTime(t3);
+
+	PrintTime(t1);
+
+	Display(t2);
+}
+
+int main()
+{
+	//Test1();
+	Test2();
 	return 0;
 }

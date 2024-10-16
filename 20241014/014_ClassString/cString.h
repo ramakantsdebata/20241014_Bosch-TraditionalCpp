@@ -10,6 +10,7 @@ class cString
 public:
 	cString();
 	cString(const char* str);
+	cString(const cString& obj);	// copy ctor
 	~cString();
 
 	// Non-constant functions
