@@ -40,9 +40,44 @@ void Test2()
 	Display(t2);
 }
 
+void Test3()
+{
+	cTime t1(25, 42, 16), t2(0, 5, 2);
+
+	cTime totalTime;
+	totalTime = t1 + t2;
+	PrintTime(totalTime);
+
+/*
+ctor(int, int, int)
+ctor(int, int, int)
+ctor()	
+ctor(int, int, int)
+ctor(const cTime&)
+Time of the t object --> 18:47:25
+*/
+/*
+ctor(int, int, int)
+ctor(int, int, int)
+ctor()
+ctor(int, int, int)
+ctor(const cTime&)
+Time of the t object --> 18:47:25
+*/
+}
+
+
+void Test4()
+{
+	cTime t1(25, 42, 16), t2(0, 5, 2);
+	std::cout << t1 << " " << t2 << std::endl;
+}
 int main()
 {
 	//Test1();
-	Test2();
+	//Test2();
+	//Test3();
+	Test4();
+
 	return 0;
 }
