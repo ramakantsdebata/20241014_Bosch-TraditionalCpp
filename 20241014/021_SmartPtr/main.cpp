@@ -43,11 +43,53 @@ void Test2()
 	SmartPtr sp4;
 	sp4 = sp1;			// sp4.operator=(sp1);
 
+	{
+		SmartPtr sp5 = sp4;
+		sp5->display();
+	}
+
+	sp4->display();
 }
+
+
+void Operate(auto_ptr <Point> ap)
+{
+	ap->display();
+}
+
+void Test3()
+{
+	int* p1 = new int(100);
+	// Some work
+	delete p1;
+
+
+	auto_ptr<int> ap1(new int(100));
+	cout << *ap1 << endl;
+
+	auto_ptr<Point> ap2(new Point(1, 2));
+	ap2->display();
+
+
+	// Bug 1
+	//{
+	//	auto_ptr<Point> ap3 = ap2;
+	//	ap3->display();
+	//}
+	//ap2->display();
+
+
+	// Bug 2
+	Operate(ap2);
+
+	ap2->display();
+}
+
 int main()
 {
-	Test1();
-	Test2();
+	//Test1();
+	//Test2();
+	Test3();
 
 	return 0;
 }

@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5cb67f98-1ce0-4f59-b323-5eac75ff1abd}</ProjectGuid>
-    <RootNamespace>My021SmartPtr</RootNamespace>
+    <ProjectGuid>{5a80e87f-7ff8-4915-90c8-1d6da8ab1b6a}</ProjectGuid>
+    <RootNamespace>My023TypeConversions</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>022_SmartPtr</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,10 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="SmartPtr.h" />
+    <ClCompile Include="Book.cpp" />
+    <ClCompile Include="cString.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="Book.h" />
+    <ClInclude Include="cString.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
