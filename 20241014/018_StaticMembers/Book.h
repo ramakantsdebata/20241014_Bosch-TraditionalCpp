@@ -7,9 +7,9 @@ class Book
 {
 	int m_id;
 	std::string m_name;
+	static int m_bkCounter;
 
 public:
-	static int m_bkCounter;
 	Book(int id, const char* name);
 	~Book();
 
