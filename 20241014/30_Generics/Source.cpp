@@ -60,10 +60,11 @@ void Test3()
 	v1.push_back(4);
 	v1.push_back(5);
 
-	vector<int> v2;
-	v2.reserve(20);
-
 	cout << v1[2] << endl;
+
+
+	vector<int> v2(20);
+	//v2.reserve(20);
 
 	for (int i = 0; i < v2.capacity(); i++)
 		v2[i] = i * 10;
