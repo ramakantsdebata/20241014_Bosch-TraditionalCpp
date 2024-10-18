@@ -1,5 +1,7 @@
 #include <iostream>
+#include <sstream>
 #include "Book.h"
+#include "cString.h"
 
 int Book::m_bkCounter = 0;
 
@@ -11,6 +13,16 @@ Book::Book(int id, const char* name):m_id(id), m_name(name)
 void Book::Display()
 {
 	std::cout << "Book Details: " << m_id << " --> " << this->m_name << std::endl;
+}
+
+int Book::getId() const
+{
+	return m_id;
+}
+
+const char* Book::getName() const
+{
+	return m_name.c_str();
 }
 
 int Book::getBookCount()
@@ -33,4 +45,12 @@ std::ostream& operator<<(std::ostream& out, const Book& book)
 {
 	out << book.m_id << " --> " << book.m_name;
 	return out;
+}
+
+
+Book::operator cString()
+{
+	std::stringstream ss;
+	ss << "Book Details --> [ ID - " << m_id << ", " << m_name << "]";
+	return cString(ss.str().c_str());
 }

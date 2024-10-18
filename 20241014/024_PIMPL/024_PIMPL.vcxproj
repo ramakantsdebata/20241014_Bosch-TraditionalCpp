@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5abef8cf-861f-40c0-b896-3d32557a781f}</ProjectGuid>
-    <RootNamespace>My019OverloadSubscript</RootNamespace>
+    <ProjectGuid>{63e28189-1077-4f0a-83d7-7613ed5f036e}</ProjectGuid>
+    <RootNamespace>My024PIMPL</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,14 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="cString.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Widget.cpp" />
+    <ClInclude Include="Widget.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cString.h" />
-    <ClInclude Include="Widget.h" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Widget.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -11,6 +11,7 @@ class cString
 public:
 	cString();
 	explicit cString(const char* str);
+	cString(const int& val);
 	cString(const cString& obj);	// copy ctor
 	~cString();
 
@@ -26,6 +27,9 @@ public:
 	cString& operator=(const cString& obj);
 	char& operator[](int idx);
 	const char& operator[](int idx) const;
+
+	// Conversion function
+	operator int();
 
 private:
 	// Helper functions

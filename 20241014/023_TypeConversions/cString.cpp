@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <sstream>
 #include "cString.h"
 
 cString::cString()
@@ -15,6 +16,14 @@ cString::cString(const char* str)
 {
 	std::cout << "cString(const char *)" << std::endl;
 	AllocateForStr(str);
+}
+
+cString::cString(const int& val)
+{
+	std::cout << "cString(const int&)" << std::endl;
+	std::stringstream ss;
+	ss << val;
+	AllocateForStr(ss.str().c_str());
 }
 
 cString::cString(const cString& obj)
@@ -104,4 +113,13 @@ char& cString::operator[](int idx)
 const char& cString::operator[](int idx) const
 {
 	return m_Str[idx];
+}
+
+
+cString::operator int()
+{
+	std::stringstream ss(m_Str);
+	int data;
+	ss >> data;
+	return data;
 }

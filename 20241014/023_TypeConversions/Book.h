@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 
+class cString;
+
 class Book
 {
 	int m_id;
@@ -13,9 +15,12 @@ public:
 	Book(int id, const char* name);
 	~Book();
 
+	int getId() const;
+	const char* getName() const;
 	void Display();
 	static int getBookCount();
 
+	operator cString();
 
 	friend std::ostream& operator<<(std::ostream& out, const Book& book);
 };

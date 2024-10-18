@@ -6,6 +6,17 @@ using namespace std;
 class Test
 {
 	int m_data;
+public:
+	Test(int val): m_data(val)
+	{
+		cout << "Test()" << endl;
+	}
+
+	~Test()
+	{
+		// Clean up operations
+		cout << "~Test()" << endl;
+	}
 };
 
 
@@ -61,12 +72,20 @@ void Test1()
 	char buffer[sizeof(Test) * 10];
 	int counter = 0;
 
-	Test* p6 = new (buffer + counter++ * sizeof(Test)) Test;
-	Test* p7 = new (buffer + counter++ * sizeof(Test)) Test;
-	Test* p8 = new (buffer + counter++ * sizeof(Test)) Test;
-	Test* p9 = new (buffer + counter++ * sizeof(Test)) Test;
+	Test t1(1), t2(2);
+
+	Test* p6 = new (buffer + counter++ * sizeof(Test)) Test(1);
+	Test* p7 = new (buffer + counter++ * sizeof(Test)) Test(2);
+	Test* p8 = new (buffer + counter++ * sizeof(Test)) Test(3);
+	Test* p9 = new (buffer + counter++ * sizeof(Test)) Test(4);
 
 	//delete (buffer)p6;
+
+	p6->~Test();
+	p7->~Test();
+	p8->~Test();
+	p9->~Test();
+
 }
 
 void Test2()
@@ -88,7 +107,7 @@ void Test2()
 
 int main()
 {
-	Test2();
+	Test1();
 
 	return 0;
 }
