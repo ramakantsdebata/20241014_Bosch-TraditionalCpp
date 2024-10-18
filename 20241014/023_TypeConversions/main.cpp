@@ -56,9 +56,27 @@ void Test2()
 
 }
 
+void Test3()
+{
+	// NEED of PIMPL idiom
+
+	Book bk(1, "The Richest Man in Babylon");
+	//bk.m_id = 10;
+
+	cout << bk << endl;
+
+	int* pID = (int*) &bk;
+	*pID = 10;
+
+	//std:string* pStr = (std::string*)(pID + 1);
+	//*pStr = std::string("Another Name");
+
+	cout << bk << endl;
+}
+
 int main()
 {
-	Test1();
+	Test3();
 
 	return 0;
 }
