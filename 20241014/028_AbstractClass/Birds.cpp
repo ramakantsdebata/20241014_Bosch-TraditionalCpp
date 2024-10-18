@@ -48,6 +48,7 @@ void Lark::buildNest()
 
 void Lark::fly()
 {
+	Bird::fly();
 	cout << "Flying off to nearby tree" << endl;
 }
 
@@ -66,4 +67,21 @@ std::string Lark::display()
 Lark::~Lark()
 {
 	cout << "Lark::~Lark" << endl;
+}
+
+
+///////////////////////////////////////////////////////////////////
+
+
+Penguin::Penguin(const char* color, int weight, const char* type) : Bird(color, weight), m_Type(type)
+{}
+
+void Penguin::speak()
+{
+	cout << "Screech" << endl;
+}
+
+void Penguin::fly()
+{
+	throw std::runtime_error("Penguins can't fly!");
 }

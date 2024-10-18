@@ -45,9 +45,17 @@ void Test4()
 	cout << sizeof(obj) << endl;
 }
 
+void Test5()
+{
+	Bird* ptr = new Penguin("BlackWhite", 30, "Emperor");
+	ptr->display();
+	ptr->fly();
+
+}
+
 int main()
 {
-	Test2();
+	Test5();
 
 	return 0;
 }
